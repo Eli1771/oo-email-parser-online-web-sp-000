@@ -13,6 +13,10 @@ class EmailParser
   end 
   
   def parse 
-    @email_list.split(/,? /).each {|email| EMAILS << email if !EMAILS.include?(email)}
+    @email_list.split(/,? /).each do |email|
+      if !EMAILS.include?(email)
+        EMAILS << email 
+      end 
+    end 
   end 
 end 
